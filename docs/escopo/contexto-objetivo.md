@@ -61,7 +61,7 @@ Desenvolver, em uma maquete com ESP32, um sistema de baixo custo que identifique
 
 ### Objetivos específicos
 1. Simular, na maquete, três postes de luz monitorados individualmente por sensores conectados ao ESP32;
-2. Detectar automaticamente quando um poste é desligado (via botão de simulação de defeito);
+2. Detectar automaticamente quando um poste tem falha (simulado pelo push button);
 3. Notificar o responsável (bot do Telegram, painel web e ThingSpeak, simulando a prefeitura) sobre qual poste apresenta falha;
 4. Demonstrar a viabilidade da solução com componentes de baixo custo;
 5. Apresentar o funcionamento do sistema de forma clara na Feira EPA.
