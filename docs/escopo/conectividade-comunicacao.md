@@ -22,6 +22,7 @@ O sistema utiliza o protocolo HTTP/HTTPS em três frentes complementares, com na
 
 **Frente 2 — Cliente HTTP para a API do ThingSpeak (histórico).** Periodicamente (respeitando o intervalo mínimo de 15 segundos entre gravações do plano gratuito), o ESP32 monta uma requisição `GET` para o endpoint `https://api.thingspeak.com/update`, informando a **Write API Key** do canal e os valores lidos de cada um dos três LDRs como campos (`field1`, `field2`, `field3`). Essa comunicação pode ser feita com a biblioteca oficial `ThingSpeak.h` (da MathWorks), que encapsula a montagem da requisição e o tratamento da resposta.
 
+**Frente 3 — Servidor HTTP local (painel web).** Paralelamente às duas frentes anteriores, o ESP32 instancia um servidor HTTP na porta 80 (via biblioteca WebServer.h), que fica escutando requisições de qualquer navegador conectado à mesma rede Wi-Fi. Ao receber uma requisição GET na rota raiz (/), o servidor monta e retorna uma resposta HTML/CSS gerada dinamicamente a partir das variáveis de estado dos três postes (lidas dos LDRs), permitindo que o painel sempre reflita o status mais recente sem exigir reinicialização ou reconfiguração.
 
 ## Sincronização de Horário via NTP
 
