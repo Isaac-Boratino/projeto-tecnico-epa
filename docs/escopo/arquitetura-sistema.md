@@ -16,8 +16,7 @@ Nesta seção, é apresentada a especificação técnica detalhada da **Arquitet
 
 * **Nuvem/App (Camada de Aplicação, Armazenamento e Interface do Usuário):** Vai atuar tanto como a saída de dados quanto como a plataforma de armazenamento e interface de gerenciamento do sistema IoT. O sistema opera em três frentes complementares e independentes entre si:
   1. **Bot do Telegram (Notificação):** Assim que uma anomalia é confirmada pela lógica do microcontrolador, o bot encaminha instantaneamente uma notificação push para a equipe de manutenção da prefeitura, contendo o identificador do poste, a localização simulada e o horário exato da ocorrência (*ex: "⚠️ Alerta: Poste 02 - Rua X - Lâmpada queimada detectada às 22h14"*).
-  2. **Servidor Web Embutido (Painel Prefeitura Digital):** O ESP32 atua simultaneamente como um servidor HTTP local. Ele renderiza uma interface dashboard em HTML/CSS para ser acessada via navegador (smartphone ou computador), permitindo a visualização ao vivo do status de todos os postes da rede, sendo ideal para demonstrações locais no evento EPA (Etec de Portas Abertas).
-  3. **ThingSpeak (Registro Histórico):** Em intervalos regulares, o ESP32 envia os valores de luminosidade de cada um dos três postes para um canal do ThingSpeak, que armazena o histórico e gera automaticamente gráficos de série temporal. Essa frente complementa as duas anteriores ao evidenciar visualmente, ao longo do tempo, o padrão de acender/apagar dos postes que sustenta a lógica de detecção do sistema.
+  3. **ThingSpeak (Registro Histórico):** Em intervalos regulares, o ESP32 envia os valores de luminosidade de cada um dos postes para um canal do ThingSpeak, que armazena o histórico e gera automaticamente gráficos de série temporal. Essa frente complementa as duas anteriores ao evidenciar visualmente, ao longo do tempo, o padrão de acender/apagar dos postes que sustenta a lógica de detecção do sistema.
 
 ---
 
